@@ -12,4 +12,6 @@ function submitForm (e) {
     let message = document.querySelector('.message').value;
 
     console.log(name, email, message);
+
+    saveContactInfo(name, email, message); //aspirational code 
 }
