@@ -88,7 +88,7 @@ function sendEmail (name, email, message) {
     Username: 'karanchauhan16@gmail.com',
     Password: "hwowubtfvpbijmdb",
     To: "karanchauhan16@gmail.com",
-    From: "karanchauhan16@gmail.com"
+    From: "karanchauhan16@gmail.com",
     Subject: `${name} sent you a message`,
     Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
   })
