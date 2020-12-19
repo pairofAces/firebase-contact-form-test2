@@ -24,7 +24,7 @@ function submitForm(e) {
   let name = document.querySelector(".name").value;
   let email = document.querySelector(".email").value;
   let message = document.querySelector(".message").value;
-  console.log(name, email, message);
+  // console.log(name, email, message);
 
   saveContactInfo(name, email, message);
 
@@ -40,18 +40,28 @@ function saveContactInfo(name, email, message) {
     email: email,
     message: message,
   });
+
+  retrieveInfos();
 }
 
 // Now I need to grab the information ("infos") from firebase
-let ref = firebase.database().ref("infos");
-ref.on("value", fetchedData);
 
-function fetchData(data) {
+function retrieveInfos() {
+  let ref = firebase.database().ref("infos");
+  ref.on("value", fetchedData);
+}
+
+
+function fetchedData(data) {
   let info = data.val();
   let keys = Object.keys(info);
 
   //now I need to loop through every value I get from above
   for (let i = 0; i < keys.length; i++) {
-    
+    let infoData = keys[i]
+    let name = info[infoData].name
+    let email = info[infoData].email
+    let message = info[infoData].message
+    console.log(name, email, message)
   }
 }
