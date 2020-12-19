@@ -87,7 +87,11 @@ p {
 }
 
 .infosResults div p {
-    
+    width: 80%;
+    margin: 30px auto;
+    background: rgb(224, 224, 224);
+    padding: 20px;
+    border-bottom: 3px solid lightgray;
 }
 
 @media all and (min-width: 1000px) {
