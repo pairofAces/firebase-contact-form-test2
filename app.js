@@ -63,5 +63,17 @@ function fetchedData(data) {
     let email = info[infoData].email
     let message = info[infoData].message
     console.log(name, email, message)
+
+    let infosResults = document.querySelector('.infosResults');
+
+    infosResults.innerHTML += `
+    <div>
+      <p>
+        <strong>Name: </strong>${name} <br>
+        <a> <strong>Email: </strong>${email}</a><br>
+        <a> <strong>Message: </strong>${message}</a>
+      </p>
+    </div>
+    `;
   }
 }

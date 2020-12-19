@@ -86,6 +86,10 @@ p {
     border-bottom: 3px solid #22b352;
 }
 
+.infosResults div p {
+    
+}
+
 @media all and (min-width: 1000px) {
     .contact-form {
         width: 40%;
