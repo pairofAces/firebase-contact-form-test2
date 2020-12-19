@@ -29,6 +29,9 @@ function submitForm(e) {
   saveContactInfo(name, email, message);
 
   document.querySelector(".contact-form").reset();
+
+  //invoke the sendEmail function (aspirational code)
+  sendEmail(name, email, message);
 }
 
 // Save infos to Firebase
@@ -76,4 +79,17 @@ function fetchedData(data) {
     </div>
     `;
   }
+}
+
+//create the sendEmail function
+function sendEmail (name, email, message) {
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: 'karanchauhan16@gmail.com',
+    Password: "hwowubtfvpbijmdb",
+    To: "karanchauhan16@gmail.com",
+    From: "karanchauhan16@gmail.com"
+    Subject: `${name} sent you a message`,
+    Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
+  })
 }
