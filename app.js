@@ -92,4 +92,5 @@ function sendEmail (name, email, message) {
     Subject: `${name} sent you a message`,
     Body: `Name: ${name} <br> Email: ${email} <br> Message: ${message}`
   })
+  .then((message) => alert("Your message has been sent successfully"))
 }
