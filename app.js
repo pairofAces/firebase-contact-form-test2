@@ -41,3 +41,17 @@ function saveContactInfo(name, email, message) {
     message: message,
   });
 }
+
+// Now I need to grab the information ("infos") from firebase
+let ref = firebase.database().ref("infos");
+ref.on("value", fetchedData);
+
+function fetchData(data) {
+  let info = data.val();
+  let keys = Object.keys(info);
+
+  //now I need to loop through every value I get from above
+  for (let i = 0; i < keys.length; i++) {
+    
+  }
+}
